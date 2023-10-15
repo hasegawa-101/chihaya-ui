@@ -6,6 +6,6 @@ export default {
 
 export const Primary = {
   args: {
-    children: "ボタン",
+    children: "ボタン!!!",
   },
 };
