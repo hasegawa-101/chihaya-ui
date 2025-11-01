@@ -27,13 +27,17 @@ jobs:
       - name: Build
         run: bun run build
 
+      - name: Configure Git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Create release Pull Request or publish to NPM
         id: changesets
         uses: changesets/action@v1
         with:
           publish: bun run release
           commit: "ci(changesets): version packages"
-          setupGitUser: false
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

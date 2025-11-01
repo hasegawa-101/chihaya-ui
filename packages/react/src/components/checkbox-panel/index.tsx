@@ -3,7 +3,6 @@ import { type ComponentProps, useMemo, useRef } from "react";
 import { tv } from "tailwind-variants";
 import { Checkbox } from "../checkbox";
 import { Component } from "../component";
-import type { RadioButton } from "../radio-button";
 
 const checkBoxPanelStyle = tv({
   base: [
@@ -13,7 +12,7 @@ const checkBoxPanelStyle = tv({
   ],
 });
 
-type Props = ComponentProps<typeof RadioButton> & {
+type Props = ComponentProps<typeof Checkbox> & {
   as?: React.ElementType;
 };
 export const CheckBoxPanel: React.FC<Props> = ({ as, className, ...props }) => {
