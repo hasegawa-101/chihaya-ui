@@ -1,0 +1,13 @@
+import type React from "react";
+import { forwardRef } from "react";
+
+export const BaseDialog = forwardRef<
+  HTMLDialogElement,
+  React.HTMLAttributes<HTMLDialogElement>
+>(({ children, ...props }, ref) => {
+  return (
+    <dialog ref={ref} {...props}>
+      {children}
+    </dialog>
+  );
+});

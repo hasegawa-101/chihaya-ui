@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v5
+
+      - name: Setup
+        uses: ./.github/composite-actions/setup
+
+      - name: Run lint
+        run: bun run lint
+
+      - name: Run typecheck
+        run: bun run typecheck
+
+      - name: Build package
+        run: bun run build

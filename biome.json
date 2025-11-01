@@ -1,0 +1,84 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.3.2/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true,
+    "defaultBranch": "main"
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "nursery": {
+        "useSortedClasses": "error"
+      },
+      "suspicious": {
+        "noExplicitAny": "error"
+      }
+    }
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
+  "files": {
+    "ignoreUnknown": false,
+    "includes": [
+      "**",
+      "!.claude",
+      "!**/dist",
+      "!**/node_modules",
+      "!**/styles.css"
+    ]
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double"
+    }
+  },
+  "overrides": [
+    {
+      "includes": [
+        "*.stories.@(ts|tsx|js|jsx|mjs|cjs)",
+        "*.story.@(ts|tsx|js|jsx|mjs|cjs)"
+      ],
+      "linter": {
+        "rules": {}
+      }
+    },
+    {
+      "includes": [".storybook/main.@(js|cjs|mjs|ts)"],
+      "linter": {
+        "rules": {}
+      }
+    },
+    {
+      "includes": ["*.ts", "*.tsx", "*.mts", "*.cts"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useConst": "error"
+          },
+          "suspicious": {
+            "noVar": "error"
+          }
+        }
+      }
+    }
+  ],
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  }
+}
