@@ -1,5 +1,6 @@
-import { StoryFn } from "@storybook/react";
-import React, { useCallback, useState } from "react";
+import type { StoryFn } from "@storybook/react";
+import type React from "react";
+import { useCallback, useState } from "react";
 import { RadioButton } from "./index.tsx";
 
 export default {

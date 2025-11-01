@@ -1,8 +1,8 @@
 import {
-  ChangeEventHandler,
-  ComponentPropsWithRef,
+  type ChangeEventHandler,
+  type ComponentPropsWithRef,
   forwardRef,
-  PropsWithChildren,
+  type PropsWithChildren,
   useCallback,
   useId,
   useMemo,

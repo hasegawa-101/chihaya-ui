@@ -11,13 +11,11 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "typecheck": "tsc --noEmit",
+    "build": "bun --filter '@chihaya-ui/react' build",
+    "typecheck": "bun --filter '@chihaya-ui/react' typecheck",
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
     "format": "biome format --write .",
-    "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "bunx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN",

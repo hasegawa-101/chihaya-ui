@@ -1,8 +1,9 @@
-import React, { ComponentProps, useMemo, useRef } from "react";
+import type React from "react";
+import { type ComponentProps, useMemo, useRef } from "react";
 import { tv } from "tailwind-variants";
 import { Checkbox } from "../checkbox";
 import { Component } from "../component";
-import { RadioButton } from "../radio-button";
+import type { RadioButton } from "../radio-button";
 
 const checkBoxPanelStyle = tv({
   base: [

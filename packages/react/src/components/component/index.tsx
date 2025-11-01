@@ -1,7 +1,8 @@
-import React, {
-  ComponentPropsWithRef,
+import type React from "react";
+import {
+  type ComponentPropsWithRef,
   forwardRef,
-  PropsWithChildren,
+  type PropsWithChildren,
 } from "react";
 
 type Props = PropsWithChildren<{

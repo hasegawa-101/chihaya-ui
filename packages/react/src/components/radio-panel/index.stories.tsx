@@ -1,6 +1,7 @@
-import { StoryFn } from "@storybook/react";
-import React, { useCallback, useState } from "react";
-import { Stack } from "../../Layouts";
+import type { StoryFn } from "@storybook/react";
+import type React from "react";
+import { useCallback, useState } from "react";
+import { Stack } from "../stack";
 import { RadioPanel } from "./index.tsx";
 
 export default {

@@ -1,4 +1,5 @@
-import React, { ComponentProps, useMemo, useRef } from "react";
+import type React from "react";
+import { type ComponentProps, useMemo, useRef } from "react";
 
 import { tv } from "tailwind-variants";
 import { Component } from "../component";

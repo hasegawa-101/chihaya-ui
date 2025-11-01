@@ -1,6 +1,6 @@
-import { StoryFn } from "@storybook/react";
-import { ChangeEvent, useState } from "react";
-import { Stack } from "../../Layouts";
+import type { StoryFn } from "@storybook/react";
+import { type ChangeEvent, useState } from "react";
+import { Stack } from "../stack";
 import { CheckBoxPanel } from "./index.tsx";
 
 export default {
@@ -30,19 +30,17 @@ export const Base: StoryFn = () => {
   };
 
   return (
-    <>
-      <Stack gap={4}>
-        {checkBoxDemoData.map((data) => (
-          <CheckBoxPanel
-            key={data.value}
-            name={data.value}
-            checked={value.includes(data.value)}
-            onChange={handleChange}
-          >
-            {data.label}
-          </CheckBoxPanel>
-        ))}
-      </Stack>
-    </>
+    <Stack gap={4}>
+      {checkBoxDemoData.map((data) => (
+        <CheckBoxPanel
+          key={data.value}
+          name={data.value}
+          checked={value.includes(data.value)}
+          onChange={handleChange}
+        >
+          {data.label}
+        </CheckBoxPanel>
+      ))}
+    </Stack>
   );
 };

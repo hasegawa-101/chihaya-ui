@@ -1,6 +1,6 @@
 import clsx from "clsx";
-import { ButtonHTMLAttributes, forwardRef } from "react";
-import { BaseProps } from "../types";
+import { type ButtonHTMLAttributes, forwardRef } from "react";
+import type { BaseProps } from "../types";
 
 type ElementProps = Omit<
   ButtonHTMLAttributes<HTMLButtonElement>,
