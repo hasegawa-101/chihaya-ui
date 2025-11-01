@@ -1,20 +1,26 @@
 name: Release
 
 on:
-  push:
-    paths:
-      - ".changeset/**"
-      - "packages/**"
+  pull_request:
+    types: [closed]
     branches:
       - main
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
 
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    if: |
+      github.event.pull_request.merged == true &&
+      startsWith(github.event.pull_request.head.ref, 'changeset-release/')
     steps:
       - name: Checkout branch
         uses: actions/checkout@v5
