@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(bun install)",
+      "Bash(bun run:*)",
+      "WebFetch(domain:stackoverflow.com)",
+      "Bash(bun add:*)",
+      "Bash(bun --cwd packages/react run build)",
+      "Bash(bunx biome migrate eslint:*)",
+      "Bash(bun:*)",
+      "Bash(bunx storybook@latest upgrade:*)",
+      "Bash(node:*)",
+      "Bash(volta install node:*)",
+      "Bash(cat:*)",
+      "Bash(bunx:*)",
+      "Bash(biome check:*)",
+      "Bash(rm:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(npx tsc:*)",
+      "Bash(npm pack:*)",
+      "WebFetch(domain:docs.github.com)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "enabledMcpjsonServers": [
+    "context7",
+    "serena"
+  ]
+}
