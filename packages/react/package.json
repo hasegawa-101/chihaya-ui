@@ -6,7 +6,6 @@
     "react",
     "components",
     "ui",
-    "tailwind",
     "tailwindcss",
     "component-library"
   ],
@@ -27,16 +26,22 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    },
-    "./styles.css": "./dist/styles.css"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
   },
   "files": [
     "dist"
   ],
+  "sideEffects": false,
   "scripts": {
-    "build": "tsc && vite build",
+    "build": "tsup --dts",
     "dev": "vite build --watch",
     "typecheck": "tsc --noEmit",
     "lint": "biome check .",
@@ -51,13 +56,19 @@
     "lucide-react": "0.552.0",
     "react": "19.2.0",
     "react-dom": "19.2.0",
+    "tailwind-merge": "3.3.1",
     "tailwind-variants": "3.1.1"
   },
   "devDependencies": {
+    "@tailwindcss/cli": "4.1.16",
+    "@tailwindcss/postcss": "4.1.16",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
     "@vitejs/plugin-react-swc": "4.2.0",
+    "esbuild": "0.25.12",
     "tailwindcss": "4.1.16",
+    "tsup": "8.5.0",
+    "tsx": "4.20.6",
     "typescript": "5.9.3",
     "vite": "7.1.12"
   }
