@@ -14,10 +14,10 @@ export const PrimaryButton = forwardRef<
     <button
       ref={ref}
       className={clsx(
-        "px-4 py-2 rounded font-medium transition-colors",
+        "rounded px-4 py-2 font-medium transition-colors",
         "bg-blue-600 hover:bg-blue-700",
         "text-white",
-        "disabled:opacity-50 disabled:cursor-not-allowed",
+        "disabled:cursor-not-allowed disabled:opacity-50",
         className,
       )}
       {...props}
