@@ -6,5 +6,4 @@ export default defineConfig({
   minify: true,
   target: "es2019",
   format: ["cjs", "esm"],
-  banner: { js: '"use client";' },
 });

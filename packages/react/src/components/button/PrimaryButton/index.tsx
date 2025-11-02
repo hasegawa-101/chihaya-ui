@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import { type ButtonHTMLAttributes, forwardRef } from "react";
 import { useChihayaUIProvider } from "../../provider";
