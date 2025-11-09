@@ -1,5 +1,8 @@
+"use client";
+
 import clsx from "clsx";
 import { type ButtonHTMLAttributes, forwardRef } from "react";
+import { useChihayaUIProvider } from "../../provider";
 import type { BaseProps } from "../types";
 
 type ElementProps = Omit<
@@ -10,14 +13,17 @@ export const BaseButton = forwardRef<
   HTMLButtonElement,
   BaseProps & ElementProps
 >(({ children, className, ...props }, ref) => {
+  const { disableAnimation } = useChihayaUIProvider();
+
   return (
     <button
       ref={ref}
       className={clsx(
-        "chu-px-4 chu-py-2 chu-rounded chu-font-medium chu-transition-colors",
-        "chu-bg-gray-100 hover:chu-bg-gray-200",
-        "chu-text-gray-900",
-        "disabled:chu-opacity-50 disabled:chu-cursor-not-allowed",
+        "rounded px-4 py-2 font-medium",
+        !disableAnimation && "transition-colors",
+        "bg-gray-100 hover:bg-gray-200",
+        "text-gray-900",
+        "disabled:cursor-not-allowed disabled:opacity-50",
         className,
       )}
       {...props}
